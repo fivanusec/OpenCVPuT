@@ -1,11 +1,12 @@
 import cv2
 import numpy as np
 import face_recognition
+from ImportPictures import Pictures
 
 """
 Jednostavni program za usporedbu lica 
 """
-
+"""
 imgFilip = face_recognition.load_image_file('Slike/Test3.jpg')
 imgFilip = cv2.cvtColor(imgFilip,cv2.COLOR_BGR2RGB)
 imgTest = face_recognition.load_image_file('Slike/Test4.jpg')
@@ -28,9 +29,27 @@ cv2.imshow("Filip", imgFilip)
 cv2.imshow("Test", imgTest)
 cv2.waitKey(0)
 
-"""
 Prikaz
 cv2.imshow('Filip', imgFilip)
 cv2.imshow('Test', imgTest)
 cv2.waitKey(0)
 """
+
+images = []
+classNames = [] 
+encodings = []
+pic = Pictures()
+
+images = pic.getPictures()
+classNames = pic.getClassNames()
+encodings = pic.getEncodings(images)
+
+if(images == [] or classNames == [] or encodings == []):
+    if(images == []):
+        print("Images are empty!")
+    elif(classNames == []):
+        print("Classnames are empty")
+    elif(encodings == []):
+        print("Encodings are empty")
+else:
+    print("Images loaded successfully!")
