@@ -27,7 +27,11 @@ class Pictures:
 
         for img in images:
             img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-            encode = face_recognition.face_encodings(img)[0]
-            encondings.append(encode)
-        
+
+            try:
+                encode = face_recognition.face_encodings(img)[0]
+                encondings.append(encode)
+            except IndexError as err:
+                print(f"Image error: {err}")
+
         return encondings
