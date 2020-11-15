@@ -19,7 +19,9 @@ pic.testImages(images,classNames,encodings)
 
 # Init camera
 camera = Camera()
-cap = cv2.VideoCapture(0)
+device = camera.start()
+
+cap = cv2.VideoCapture(device)
 
 # Intit Process
 process = Proccess(images, classNames, encodings, cap)
