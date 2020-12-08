@@ -5,7 +5,7 @@ import face_recognition
 # Moduels
 from ImportPictures import Pictures
 from Camera import Camera
-from Process import Proccess
+from Process import Process
 
 # Declaration of pictures
 pic = Pictures()
@@ -24,4 +24,4 @@ device = camera.start()
 cap = cv2.VideoCapture(device)
 
 # Intit Process
-process = Proccess(images, classNames, encodings, cap)
+process = Process(images, classNames, encodings, cap)

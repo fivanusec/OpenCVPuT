@@ -19,6 +19,5 @@ class Camera:
     def enableDroidCam(self):
         try:
             os.system(f"droidcam-cli {self.addr} {self.port}")
-            return True
         except:
             print("There was an error with camera")

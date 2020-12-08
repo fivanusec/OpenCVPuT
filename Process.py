@@ -3,7 +3,7 @@ import face_recognition
 import threading
 import numpy as np
 
-class Proccess:
+class Process:
 
     def __init__(self, images, classNames, encodings, cap):
         recognitionThread = threading.Thread(target=self.recognition, args=(images, classNames, encodings, cap))
