@@ -1,15 +1,14 @@
 import cv2
 import numpy as np
 import face_recognition
-from ImportPictures import Pictures
 
 """
 Jednostavni program za usporedbu lica 
 """
 
-imgFilip = face_recognition.load_image_file('Slike/Test3.jpg')
+imgFilip = face_recognition.load_image_file('./Slike/Bill Gates.jpg')
 imgFilip = cv2.cvtColor(imgFilip,cv2.COLOR_BGR2RGB)
-imgTest = face_recognition.load_image_file('Slike/Test4.jpg')
+imgTest = face_recognition.load_image_file('./Slike/Jack Ma.jpg')
 imgTest = cv2.cvtColor(imgTest,cv2.COLOR_BGR2RGB)
 
 faceLoc = face_recognition.face_locations(imgFilip)[0]
@@ -23,6 +22,7 @@ cv2.rectangle(imgTest,(faceLocTest[3], faceLocTest[0]),(faceLocTest[1],faceLocTe
 results = face_recognition.compare_faces([encodeFilip],encodeTest)
 faceDis = face_recognition.face_distance([encodeFilip], encodeTest)
 
+print("Faces are similar: ")
 print(results, faceDis)
 
 cv2.imshow("Filip", imgFilip)

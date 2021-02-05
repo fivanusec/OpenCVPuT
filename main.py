@@ -6,6 +6,7 @@ import face_recognition
 from ImportPictures import Pictures
 from Camera import Camera
 from Process import Process
+from Snapshot import Snapshot
 
 # Declaration of pictures
 pic = Pictures()
@@ -21,7 +22,20 @@ pic.testImages(images,classNames,encodings)
 camera = Camera()
 device = camera.start()
 
-cap = cv2.VideoCapture(device)
+print("Operating modes> \n")
+print("1 for recognition")
+print("2 for snapshot")
+mode = int(input("Input the operating mode> "))
+if(mode == 2):
+    snapshot = Snapshot()
+    snapshotPicture = snapshot.picture(device)
+    save = snapshot.save(snapshotPicture)
+    if(save):
+        print("Snapshot saved!")
+    else:
+        print("Nothing was saved!")
 
-# Intit Process
-process = Process(images, classNames, encodings, cap)
+else:
+    cap = cv2.VideoCapture(device)
+    # Intit Process
+    process = Process(images, classNames, encodings, cap)        

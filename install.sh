@@ -1,4 +1,4 @@
-PS3='Select your linux flavor: '
+PS3='Select your linux distribution: '
 options=("Ubuntu/Debian" "Arch" "Quit")
 select opt in "${options[@]}"
 do
@@ -10,6 +10,7 @@ do
             pip3 install numpy
             pip3 install opencv-python
             pip3 install face-recognition
+            pip3 install xlsxwriter
             break
             ;;
         "Arch")
@@ -19,6 +20,7 @@ do
             pip install numpy
             pip install opencv-python
             pip install face-recognition
+            pip install xlsxwriter
             break
             ;;
         "Quit")
