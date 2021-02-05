@@ -37,7 +37,6 @@ class Process:
                     cv2.putText(img, name,(x1+6,y2-6), cv2.FONT_HERSHEY_COMPLEX, 1,(0,0,0),2)
                     writer = Writer()
                     writer.wirte(name) 
-                    cv2.destroyWindow("Webcam")
                     return True
                 else:
                     print("No match")

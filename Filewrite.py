@@ -31,4 +31,3 @@ class Writer:
             writer = csv.writer(file, delimiter=',', quotechar='"', quoting=csv.QUOTE_MINIMAL)
             writer.writerow(['\n'])
             writer.writerow([data,date.today()])
-
