@@ -13,8 +13,8 @@ class Camera:
         if len(self.addr) > 1 and len(self.port) > 1:
             camThread = threading.Thread(target=self.enableDroidCam, args=())
             camThread.start()
-            return 0
-        return 1
+            return 1
+        return 0
 
     def enableDroidCam(self):
         try:

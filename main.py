@@ -38,4 +38,4 @@ if(mode == 2):
 else:
     cap = cv2.VideoCapture(device)
     # Intit Process
-    process = Process(images, classNames, encodings, cap)        
+    process = Process(images, classNames, encodings, cap)
